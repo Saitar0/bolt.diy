@@ -32,8 +32,8 @@ RUN NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
 # ---- production dependencies stage ----
 FROM build AS prod-deps
 
-# Keep only production deps for runtime
-RUN pnpm prune --prod --ignore-scripts
+# Keep all dependencies because dockerstart requires Vite
+# Vite is installed as a devDependency
 
 
 # ---- production stage ----
