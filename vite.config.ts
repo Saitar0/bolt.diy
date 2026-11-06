@@ -17,6 +17,12 @@ dotenv.config({ path: ['.env.local', '.env'], quiet: true });
 
 export default defineConfig((config) => {
   return {
+    preview: {
+      host: '0.0.0.0',
+      port: 5173,
+      strictPort: true,
+      allowedHosts: ['slkfelipe.saitaro.tech'],
+    },
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 
